@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ushoqtepa Taxi</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+</head>
+<body>
+
+    <!-- Sayt logotipi -->
+    <header>
+        <img src="./images/logo.png" alt="Ushoqtepa Taxi" class="logo">
+    </header>
+
+    <!-- Asosiy tugmalar -->
+    <div class="container">
+        <button onclick="openModal('taxiModal')">🚖 Taksi chaqirish</button>
+        <button onclick="openModal('driverModal')">🚗 Haydovchi bo‘lish</button>
+        <button onclick="openModal('contactModal')">📞 Aloqa</button>
+        <button onclick="openModal('ratingModal')">⭐ Baholash</button>
+    </div>
+
+    <!-- Taksi chaqirish -->
+    <div id="taxiModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('taxiModal')">&times;</span>
+            <h2>🚖 Taksi chaqirish</h2>
+            <form id="taxiForm">
+                <input type="text" name="name" placeholder="Ism va familiya" required>
+                <input type="tel" name="phone" placeholder="Telefon raqami" required>
+                <input type="text" name="destination" placeholder="Qayerga?" required>
+                <input type="text" name="location" placeholder="Lokatsiya (Google Maps yoki manzil)" required>
+                <button type="submit">✅ Buyurtmani tasdiqlash</button>
+            </form>
+            <p id="taxiConfirm" style="display: none;">✅ Buyurtmangiz qabul qilindi!</p>
+        </div>
+    </div>
+
+    <!-- Haydovchi bo‘lish -->
+    <div id="driverModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('driverModal')">&times;</span>
+            <h2>🚗 Haydovchi bo‘lish</h2>
+            <form id="driverForm">
+                <input type="text" name="driver_name" placeholder="Ism va familiya" required>
+                <input type="tel" name="driver_phone" placeholder="Telefon raqami" required>
+                <input type="text" name="car_info" placeholder="Avtomobil markasi va raqami" required>
+                <select name="license" required>
+                    <option value="">Haydovchilik guvohnomasi bormi?</option>
+                    <option value="Ha">Ha ☑️</option>
+                    <option value="Yo'q">Yo‘q ❌</option>
+                </select>
+                <input type="number" name="experience" placeholder="Tajribangiz (yil)" required>
+                <input type="text" name="fuel" placeholder="Yoqilg‘i turi" required>
+                <textarea name="extra_info" placeholder="Qo‘shimcha ma’lumot"></textarea>
+                <button type="submit">✅ Arizani yuborish</button>
+            </form>
+            <p id="driverConfirm" style="display: none;">✅ Arizangiz qabul qilindi!</p>
+        </div>
+    </div>
+
+    <!-- Aloqa -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contactModal')">&times;</span>
+            <h2>📞 Aloqa</h2>
+            <p>📩 Admin: <a href="https://t.me/GoLearnUzb">@GoLearnUzb</a></p>
+            <p>📞 Telefon: <a href="tel:+998500175636">+998 50 017 56 36</a></p>
+            <p>🚕 Ushoqtepa Taxi – Tez, ishonchli, qulay! 🚀</p>
+        </div>
+    </div>
+
+    <!-- Baholash -->
+    <div id="ratingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ratingModal')">&times;</span>
+            <h2>⭐ Xizmat sifatini baholash</h2>
+            <form id="ratingForm">
+                <select name="rating" required>
+                    <option value="">Bahoni tanlang</option>
+                    <option value="1">🌟</option>
+                    <option value="2">🌟🌟</option>
+                    <option value="3">🌟🌟🌟</option>
+                    <option value="4">🌟🌟🌟🌟</option>
+                    <option value="5">🌟🌟🌟🌟🌟</option>
+                </select>
+                <button type="submit">✅ Baholash</button>
+            </form>
+            <p id="ratingConfirm" style="display: none;">✅ Bahoyingiz qabul qilindi!</p>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

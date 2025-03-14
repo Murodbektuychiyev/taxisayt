@@ -1,0 +1,164 @@
+/* Umumiy sozlamalar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #eceff1, #f5f5f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Asosiy tugmalar konteyneri */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Tugmalar */
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Har bir tugma uchun alohida rang */
+.container button:nth-child(1) { background-color: #28a745; color: white; } /* Taksi chaqirish */
+.container button:nth-child(2) { background-color: #007bff; color: white; } /* Haydovchi bo‘lish */
+.container button:nth-child(3) { background-color: #ffc107; color: black; } /* Aloqa */
+.container button:nth-child(4) { background-color: #dc3545; color: white; } /* Baholash */
+
+/* Modal oynalar */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Modal kontent */
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal animatsiya */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Yopish tugmasi */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+/* Forma elementlari */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Inputlarga hover effekti */
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Forma tugmasi */
+form button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Baholash bo‘limi */
+form select {
+    text-align: center;
+    font-size: 16px;
+}
+
+header {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f8f9fa; /* Orqa fon */
+}
+
+.logo {
+    width: 150px; /* Kenglik */
+    height: auto; /* Nisbiy balandlik */
+}
+
+/* Mobil versiya (kichik ekranlar) */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 360px;
+    }
+  }
